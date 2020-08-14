@@ -183,6 +183,7 @@ def update_contact(doc, method):
 		contact.save(ignore_permissions=True)
 
 @frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
 def contact_query(doctype, txt, searchfield, start, page_len, filters):
 	from frappe.desk.reportview import get_match_cond
 
@@ -192,13 +193,6 @@ def contact_query(doctype, txt, searchfield, start, page_len, filters):
 
 	link_doctype = filters.pop('link_doctype')
 	link_name = filters.pop('link_name')
-
-	condition = ""
-	for fieldname, value in iteritems(filters):
-		condition += " and {field}={value}".format(
-			field=fieldname,
-			value=value
-		)
 
 	return frappe.db.sql("""select
 			`tabContact`.name, `tabContact`.first_name, `tabContact`.last_name

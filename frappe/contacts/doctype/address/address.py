@@ -231,6 +231,7 @@ def get_company_address(company):
 	return ret
 
 @frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
 def address_query(doctype, txt, searchfield, start, page_len, filters):
 	from frappe.desk.reportview import get_match_cond
 
@@ -243,8 +244,7 @@ def address_query(doctype, txt, searchfield, start, page_len, filters):
 		if meta.get_field(fieldname) or fieldname in frappe.db.DEFAULT_COLUMNS:
 			condition += " and {field}={value}".format(
 				field=fieldname,
-				value=value
-			)
+				value=frappe.db.escape(value))
 
 	searchfields = meta.get_search_fields()
 
