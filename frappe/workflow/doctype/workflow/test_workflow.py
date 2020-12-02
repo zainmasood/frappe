@@ -15,6 +15,8 @@ class TestWorkflow(unittest.TestCase):
 		make_test_records("User")
 
 	def setUp(self):
+		frappe.db.sql('DELETE FROM `tabToDo`')
+		frappe.db.sql("DELETE FROM `tabHas Role` WHERE `role`='Test Approver'")
 		if not getattr(self, 'workflow', None):
 			self.workflow = create_todo_workflow()
 		frappe.set_user('Administrator')
