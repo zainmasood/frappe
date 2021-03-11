@@ -349,7 +349,7 @@ def get_request_site_address(full_address=False):
 	return get_url(full_address=full_address)
 
 def get_site_url(site):
-	return 'http://{site}:{port}'.format(
+	return 'https://{site}:{port}'.format(
 		site=site,
 		port=frappe.get_conf(site).webserver_port
 	)
