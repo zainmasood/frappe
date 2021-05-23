@@ -209,7 +209,7 @@
   }
  ],
  "links": [],
- "modified": "2021-01-21 12:09:36.156614",
+ "modified": "2021-03-13 20:01:32.937267",
  "modified_by": "Administrator",
  "module": "Desk",
  "name": "Desk Page",
@@ -224,6 +224,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   },

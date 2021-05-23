@@ -167,7 +167,7 @@
  ],
  "hide_toolbar": 1,
  "links": [],
- "modified": "2020-06-24 14:33:03.173876",
+ "modified": "2021-04-04 20:07:40.115497",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "Data Import",
@@ -182,6 +182,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "shelter officer",
    "share": 1,
    "write": 1
   }
